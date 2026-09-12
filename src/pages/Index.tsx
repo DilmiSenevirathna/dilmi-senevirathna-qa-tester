@@ -7,6 +7,7 @@ import { Experience } from "@/components/Experience";
 import { Education } from "@/components/Education";
 import { Projects } from "@/components/Projects";
 import { QAReports } from "@/components/QAReports";
+import { ProfessionalProjects } from "@/components/ProfessionalProjects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -20,6 +21,7 @@ const Index = () => {
       <Certifications />
       <Education />
       <Experience />
+      <ProfessionalProjects />
       <QAReports />
       <Projects />
       <Contact />
