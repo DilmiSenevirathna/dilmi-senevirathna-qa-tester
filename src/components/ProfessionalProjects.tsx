@@ -1,6 +1,7 @@
 import { ExternalLink, Github, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import intajVideoAsset from "@/assets/browserstack-intaj-mobile-testing.mp4.asset.json";
 
 const professionalProjects = [
   {
@@ -8,6 +9,7 @@ const professionalProjects = [
     description:
       "This project helped me strengthen my skills in ensuring software reliability, responsiveness, and stability under varying user loads.",
     videoUrl: `${import.meta.env.BASE_URL}videos/sufra_os.webm`,
+    videoType: "video/webm",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/sufra_os_thumb.jpg`,
     reportUrl: "https://dilsenevirathna.github.io/Sufra_OS_Full-Testing-Project/index.html",
     github: "https://github.com/DilSenevirathna/Sufra_OS_Full-Testing-Project",
@@ -28,6 +30,7 @@ const professionalProjects = [
     description:
       "This project helped me strengthen my skills in UI automation, test design, and validation of multi-step registration workflows — key areas in ensuring a smooth and reliable user experience.",
     videoUrl: `${import.meta.env.BASE_URL}videos/ariv_pay.webm`,
+    videoType: "video/webm",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/ariv_pay_thumb.jpg`,
     reportUrl: "https://dilsenevirathna.github.io/ArivPay_SignUp_process_PlaywrightsTest/",
     github: "https://github.com/DilSenevirathna/ArivPay_SignUp_process_PlaywrightsTestrepo",
@@ -43,6 +46,25 @@ const professionalProjects = [
       "Enhanced understanding of modern automation frameworks",
       "Practiced modular test design and data-driven testing approaches",
       "Gained experience in reporting and version control using GitHub",
+    ],
+  },
+  {
+    title: "INTAJ Mobile Application - BrowserStack Automated Testing",
+    description:
+      "Automated mobile testing of INTAJ, an event-services marketplace connecting clients with photographers, videographers, event planners, and other vendors.",
+    videoUrl: intajVideoAsset.url,
+    videoType: "video/mp4",
+    workedOn: [
+      "Executed automated mobile tests across real devices and operating systems using BrowserStack",
+      "Validated vendor-side workflows for presenting and managing event-related services",
+      "Tested client journeys for discovering and hiring suitable event vendors",
+      "Verified invitation card creation and sharing with contacts and groups",
+      "Validated invitation delivery through email, WhatsApp, and standard text messages",
+    ],
+    learnings: [
+      "Strengthened cross-device mobile application testing and compatibility analysis",
+      "Improved end-to-end validation of multi-role vendor and client workflows",
+      "Gained practical experience testing third-party communication and sharing channels",
     ],
   },
 ];
@@ -68,8 +90,8 @@ export const ProfessionalProjects = () => (
           <Card key={project.title} className="p-6 border-2 hover:shadow-xl transition-all group flex flex-col">
             <div className="space-y-6 flex-1 flex flex-col">
               <div className="relative rounded-lg overflow-hidden shadow-lg bg-muted aspect-video mb-4">
-                <video controls className="w-full h-full object-cover" poster={project.thumbnail}>
-                  <source src={project.videoUrl} type="video/webm" />
+                <video controls preload="metadata" className="w-full h-full object-cover" poster={project.thumbnail}>
+                  <source src={project.videoUrl} type={project.videoType} />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -107,19 +129,25 @@ export const ProfessionalProjects = () => (
                   </ul>
                 </div>
 
-                <div className="flex gap-2 mt-auto pt-4">
-                  <Button size="sm" variant="outline" className="gap-2 flex-1" asChild>
-                    <a href={project.reportUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" />
-                      View Report
-                    </a>
-                  </Button>
-                  <Button size="sm" variant="outline" aria-label={`View ${project.title} on GitHub`} asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
+                {(project.reportUrl || project.github) && (
+                  <div className="flex gap-2 mt-auto pt-4">
+                    {project.reportUrl && (
+                      <Button size="sm" variant="outline" className="gap-2 flex-1" asChild>
+                        <a href={project.reportUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                          View Report
+                        </a>
+                      </Button>
+                    )}
+                    {project.github && (
+                      <Button size="sm" variant="outline" aria-label={`View ${project.title} on GitHub`} asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </Card>
