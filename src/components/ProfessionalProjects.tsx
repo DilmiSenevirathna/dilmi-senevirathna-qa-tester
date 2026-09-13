@@ -2,27 +2,28 @@ import { ExternalLink, Github, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import intajVideoAsset from "@/assets/browserstack-intaj-mobile-testing.mp4.asset.json";
+import sufraVideoAsset from "@/assets/sufra-os-digital-qa-report.mp4.asset.json";
 
 const professionalProjects = [
   {
-    title: "Sufra OS - Full Performance Testing Project",
+    title: "SUFRA OS – Restaurant Management System | Digital QA Report",
     description:
-      "This project helped me strengthen my skills in ensuring software reliability, responsiveness, and stability under varying user loads.",
-    videoUrl: `${import.meta.env.BASE_URL}videos/sufra_os.webm`,
-    videoType: "video/webm",
+      "This testing video presents the complete Digital QA Report I developed for the SUFRA OS Restaurant Management System during my previous workplace experience. It provides a reliable, flexible, and maintainable approach to software testing and defect tracking across multiple testing cycles.",
+    videoUrl: sufraVideoAsset.url,
+    videoType: "video/mp4",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/sufra_os_thumb.jpg`,
     reportUrl: "https://dilsenevirathna.github.io/Sufra_OS_Full-Testing-Project/index.html",
     github: "https://github.com/DilSenevirathna/Sufra_OS_Full-Testing-Project",
     workedOn: [
-      "Designed and executed load and stress tests using Apache JMeter",
-      "Measured response time, throughput, and error rate under different conditions",
-      "Analyzed performance bottlenecks and suggested improvements",
-      "Created detailed performance reports to visualize results and insights",
+      "Documented the complete testing process and system quality evaluation",
+      "Created and maintained test scenarios covering key restaurant management workflows",
+      "Recorded identified defects, testing results, and supporting evidence",
+      "Designed a reusable digital report that is easy to update, manage, and review",
     ],
     learnings: [
-      "Improved understanding of performance testing lifecycle",
-      "Learned to interpret metrics to evaluate system health",
-      "Strengthened analytical mindset in identifying and solving performance issues",
+      "Improved the efficiency and consistency of reporting across different testing cycles",
+      "Strengthened practical experience in defect tracking and quality evaluation",
+      "Developed a maintainable QA reporting approach for ongoing product improvement",
     ],
   },
   {
