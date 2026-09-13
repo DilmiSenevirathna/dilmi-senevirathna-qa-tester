@@ -2,6 +2,7 @@ import { ExternalLink, Github, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import intajVideoAsset from "@/assets/browserstack-intaj-mobile-testing.mp4.asset.json";
+import mablVideoAsset from "@/assets/mabl-trainer-demo.mp4.asset.json";
 
 const professionalProjects = [
   {
@@ -65,6 +66,25 @@ const professionalProjects = [
       "Strengthened cross-device mobile application testing and compatibility analysis",
       "Improved end-to-end validation of multi-role vendor and client workflows",
       "Gained practical experience testing third-party communication and sharing channels",
+    ],
+  },
+  {
+    title: "Mabl Trainer – AI-Assisted Test Automation",
+    description:
+      "This video showcases hands-on experience using Mabl Trainer, an AI-powered test automation tool, to perform automated testing of a newly developed mobile application in a real-world workplace environment.",
+    videoUrl: mablVideoAsset.url,
+    videoType: "video/mp4",
+    workedOn: [
+      "Created and executed automated test flows using Mabl Trainer",
+      "Validated application functionality across mobile app workflows",
+      "Identified unexpected behaviors and supported defect identification",
+      "Performed retesting and regression testing to confirm fixes",
+      "Applied practical QA practices in a real-world workplace environment",
+    ],
+    learnings: [
+      "Gained practical experience in AI-assisted test automation",
+      "Improved testing efficiency, consistency, and coverage through modern automation workflows",
+      "Strengthened skills in test scenario validation, defect identification, and regression testing",
     ],
   },
 ];
