@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "About", href: "#about", isSection: true },
+  { label: "QA Work", href: "#professional-projects", isSection: true },
   { label: "Skills", href: "#skills", isSection: true },
   { label: "Experience", href: "#experience", isSection: true },
   { label: "QA Reports", href: "#qa-reports", isSection: true },
-  { label: "Education", href: "#education", isSection: true },
-  { label: "Projects", href: "#projects", isSection: true },
+  { label: "About", href: "#about", isSection: true },
   { label: "Blog", href: "/blog", isSection: false },
   { label: "Contact", href: "#contact", isSection: true },
 ];
@@ -89,32 +88,24 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/60 backdrop-blur-xl shadow-lg border-b border-border/40"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between h-16 mt-3 px-3 md:px-4 rounded-full border transition-all duration-500 ${isScrolled ? "bg-background/85 backdrop-blur-xl shadow-lg border-border" : "bg-background/45 backdrop-blur-md border-border/60"}`}>
           {/* Logo */}
           <a
             href="#"
-            className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
+            className="flex items-center gap-2 transition-colors"
           >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-accent shadow-lg">
+            <div className="relative flex items-center justify-center w-9 h-9 rounded-full gradient-primary shadow-glow">
               <Bug className="w-5 h-5 text-primary-foreground" />
               <ShieldCheck className="w-3 h-3 text-primary-foreground absolute -bottom-0.5 -right-0.5" />
             </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hidden sm:inline">QA</span>
+            <span className="text-sm font-extrabold text-foreground hidden sm:inline">DILMI<span className="text-primary">.QA</span></span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className={`hidden md:flex items-center gap-1 rounded-full px-2 py-1.5 border transition-all duration-500 ${
-            isScrolled 
-              ? "bg-muted/30 backdrop-blur-sm border-border/30" 
-              : "bg-white/10 backdrop-blur-sm border-white/20"
-          }`}>
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -122,9 +113,7 @@ export const Navigation = () => {
                 className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                   activeSection === item.href || (location.pathname === item.href)
                     ? "text-primary-foreground"
-                    : isScrolled 
-                      ? "text-muted-foreground hover:text-foreground" 
-                      : "text-white/90 hover:text-white"
+                      : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {(activeSection === item.href || (location.pathname === item.href)) && (
