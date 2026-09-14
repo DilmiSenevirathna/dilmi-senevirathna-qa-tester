@@ -1,6 +1,7 @@
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePicture from "@/assets/profile-picture.png";
+import resumeAsset from "@/assets/Dilmi_Senevirathna_Resume.pdf.asset.json";
 
 export const Hero = () => {
   return (
@@ -38,9 +39,12 @@ export const Hero = () => {
                 size="lg"
                 variant="secondary"
                 className="gap-2 shadow-lg hover:shadow-xl transition-shadow"
+                asChild
               >
-                <Download className="h-5 w-5" />
-                Download CV
+                <a href={resumeAsset.url} download="Dilmi_Senevirathna_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="h-5 w-5" />
+                  Download CV
+                </a>
               </Button>
               
               <Button
