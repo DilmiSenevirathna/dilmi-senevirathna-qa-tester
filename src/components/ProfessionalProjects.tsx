@@ -2,7 +2,7 @@ import { ExternalLink, Github, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import intajVideoAsset from "@/assets/browserstack-intaj-mobile-testing.mp4.asset.json";
-import mablVideoAsset from "@/assets/mabl-trainer-demo.mp4.asset.json";
+import mablVideoAsset from "@/assets/mabl-trainer-demo-real.mp4.asset.json";
 
 const professionalProjects = [
   {
