@@ -91,7 +91,7 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/60 backdrop-blur-xl shadow-lg border-b border-border/40"
+          ? "bg-background/85 backdrop-blur-xl shadow-lg border-b border-border"
           : "bg-transparent"
       }`}
     >
@@ -102,18 +102,18 @@ export const Navigation = () => {
             href="#"
             className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
           >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-accent shadow-lg">
+            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg gradient-primary shadow-glow">
               <Bug className="w-5 h-5 text-primary-foreground" />
               <ShieldCheck className="w-3 h-3 text-primary-foreground absolute -bottom-0.5 -right-0.5" />
             </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hidden sm:inline">QA</span>
+            <span className="text-lg font-bold gradient-text hidden sm:inline">QA</span>
           </a>
 
           {/* Desktop Navigation */}
           <div className={`hidden md:flex items-center gap-1 rounded-full px-2 py-1.5 border transition-all duration-500 ${
             isScrolled 
-              ? "bg-muted/30 backdrop-blur-sm border-border/30" 
-              : "bg-white/10 backdrop-blur-sm border-white/20"
+              ? "bg-muted/70 backdrop-blur-sm border-border" 
+              : "bg-card/50 backdrop-blur-sm border-border/70"
           }`}>
             {navItems.map((item) => (
               <button
@@ -124,7 +124,7 @@ export const Navigation = () => {
                     ? "text-primary-foreground"
                     : isScrolled 
                       ? "text-muted-foreground hover:text-foreground" 
-                      : "text-white/90 hover:text-white"
+                      : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {(activeSection === item.href || (location.pathname === item.href)) && (
