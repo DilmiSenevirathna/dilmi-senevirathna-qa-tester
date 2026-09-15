@@ -8,47 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 258 36% 6%;
-    --foreground: 255 25% 96%;
+    --background: 270 15% 97%;
+    --foreground: 275 30% 12%;
 
-    --card: 258 29% 10%;
-    --card-foreground: 255 25% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 275 30% 12%;
 
-    --popover: 258 29% 10%;
-    --popover-foreground: 255 25% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 275 30% 12%;
 
-    --primary: 262 83% 66%;
+    --primary: 270 65% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 258 24% 15%;
-    --secondary-foreground: 255 22% 91%;
+    --secondary: 270 15% 92%;
+    --secondary-foreground: 275 30% 18%;
 
-    --muted: 258 24% 14%;
-    --muted-foreground: 258 13% 67%;
+    --muted: 270 15% 94%;
+    --muted-foreground: 270 15% 45%;
 
-    --accent: 195 90% 55%;
+    --accent: 285 70% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 258 20% 22%;
-    --input: 258 20% 22%;
-    --ring: 262 83% 66%;
+    --border: 270 15% 88%;
+    --input: 270 15% 88%;
+    --ring: 270 65% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
     /* Custom gradients - Dark purple */
-    --gradient-primary: linear-gradient(120deg, hsl(262 83% 66%), hsl(195 90% 55%));
-    --gradient-hero: linear-gradient(145deg, hsl(258 36% 6%), hsl(263 36% 10%));
-    --gradient-card: linear-gradient(180deg, hsl(258 29% 11%), hsl(258 29% 9%));
+    --gradient-primary: linear-gradient(135deg, hsl(270 65% 45%), hsl(285 70% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(275 50% 18%) 0%, hsl(270 65% 35%) 50%, hsl(285 70% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(270 15% 96%));
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-    --shadow-glow: 0 0 32px hsl(262 83% 66% / 0.24);
+    --shadow-glow: 0 0 40px hsl(270 65% 45% / 0.3);
     
     /* Transitions */
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -113,32 +113,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
-    letter-spacing: 0;
-    background-image: linear-gradient(hsl(var(--border) / 0.12) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.12) 1px, transparent 1px);
-    background-size: 48px 48px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
   html {
     scroll-behavior: smooth;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'Avenir Next', 'Segoe UI', sans-serif;
-    letter-spacing: 0;
-  }
-
-  section:not(.hero-shell) {
-    @apply relative border-t border-border/60;
-  }
-
-  section:not(.hero-shell) > .container > .text-center {
-    @apply text-left max-w-6xl mx-auto;
-  }
-
-  section:not(.hero-shell) > .container > .text-center > div[class*="w-20"],
-  section:not(.hero-shell) > .container > .text-center > div[class*="w-24"] {
-    @apply ml-0 rounded-none h-px;
   }
 }
 
@@ -164,43 +143,5 @@ All colors MUST be HSL.
   
   .transition-base {
     transition: var(--transition-base);
-  }
-
-  .hero-shell {
-    min-height: min(900px, 100vh);
-    display: flex;
-    align-items: center;
-    background: var(--gradient-hero);
-  }
-
-  .hero-grid {
-    opacity: 0.42;
-    background-image: linear-gradient(hsl(var(--border) / 0.35) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.35) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-  }
-
-  .profile-panel {
-    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--background)));
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
-    box-shadow: 24px 24px 0 hsl(var(--primary) / 0.08), var(--shadow-xl);
-  }
-
-  .tool-chip {
-    @apply inline-flex items-center rounded-sm border border-border bg-secondary/70 px-3 py-1.5 text-xs font-semibold text-secondary-foreground;
-  }
-
-  .social-link {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card/60 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary hover:text-primary;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      scroll-behavior: auto !important;
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
   }
 }

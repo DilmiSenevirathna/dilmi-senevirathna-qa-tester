@@ -1,53 +1,44 @@
-import { ArrowDownRight, CheckCircle2, Download, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePicture from "@/assets/profile-picture.png";
 import resumeAsset from "@/assets/Dilmi_Senevirathna_Resume.pdf.asset.json";
 
 export const Hero = () => {
-  const proofPoints = [
-    { value: "2+", label: "Years in QA" },
-    { value: "60%", label: "Faster testing" },
-    { value: "4", label: "QA case studies" },
-  ];
-
   return (
-    <section className="hero-shell relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
-      <div className="hero-grid absolute inset-0" aria-hidden="true" />
+    <section className="min-h-screen flex items-center justify-center gradient-hero relative overflow-hidden pt-20">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-white/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse-glow"></div>
+        <div className="absolute w-96 h-96 bg-white/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse-glow delay-1000"></div>
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-[1.25fr_.75fr] gap-12 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left content */}
-          <div className="space-y-7 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/25 rounded-full text-xs font-semibold uppercase text-primary">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-40 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-              </span>
-              Open to Associate QA opportunities
+          <div className="text-white space-y-6 animate-fade-up">
+            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
+              👋 Welcome to my portfolio
             </div>
             
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95]">
-              Dilmi <span className="gradient-text">Senevirathna</span>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              Dilmi
+              <br />
+              <span className="text-white/90">Senevirathna</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-foreground font-semibold">
-              Quality Assurance Engineer
-              <span className="text-muted-foreground font-normal"> · Software Engineer</span>
+            <p className="text-xl md:text-2xl text-white/90 font-light">
+              QA Engineer | Software Engineer
             </p>
             
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-lg text-white/80 max-w-xl">
               Quality Assurance Engineer with over 2 years of experience specializing in test automation, performance testing, and software quality validation. Skilled in Playwright, Selenium, JMeter, and modern testing methodologies.
             </p>
-
-            <div className="flex flex-wrap gap-2">
-              {["Playwright", "Selenium", "JMeter", "BrowserStack", "Mabl AI"].map((tool) => (
-                <span key={tool} className="tool-chip">{tool}</span>
-              ))}
-            </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
                 size="lg"
-                className="gap-2 shadow-glow"
+                variant="secondary"
+                className="gap-2 shadow-lg hover:shadow-xl transition-shadow"
                 asChild
               >
                 <a href={resumeAsset.url} download="Dilmi_Senevirathna_Resume.pdf" target="_blank" rel="noopener noreferrer">
@@ -59,7 +50,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 bg-card/50"
+                className="gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm"
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Mail className="h-5 w-5" />
@@ -68,74 +59,67 @@ export const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-2 pt-1">
+            <div className="flex gap-4 pt-4">
               <a
                 href="https://github.com/DilSenevirathna"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link"
-                aria-label="GitHub"
+                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors"
               >
-                <Github className="h-5 w-5" />
+                <Github className="h-5 w-5 text-white" />
               </a>
               <a
                 href="https://www.linkedin.com/in/dilmi-senevirathna-6b6933228"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link"
+                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-5 w-5 text-white" />
               </a>
               <a
                 href="mailto:chathuryadilmi@gmail.com"
-                className="social-link"
+                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors"
                 aria-label="Email"
               >
-                <Mail className="h-5 w-5" />
+                <Mail className="h-5 w-5 text-white" />
               </a>
               <a
                 href="tel:+94775765299"
-                className="social-link"
+                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors"
                 aria-label="Phone"
               >
-                <Phone className="h-5 w-5" />
+                <Phone className="h-5 w-5 text-white" />
               </a>
             </div>
           </div>
 
           {/* Right content - Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-fade-in">
-            <div className="profile-panel relative w-full max-w-md p-3">
-              <div className="aspect-[4/5] overflow-hidden rounded-md bg-secondary border border-border">
+          <div className="flex justify-center animate-fade-in">
+            <div className="relative">
+              <div className="w-72 h-72 md:w-80 md:h-80 lg:w-[340px] lg:h-[340px] rounded-full overflow-hidden border-4 border-white/30 shadow-2xl animate-float ring-4 ring-white/10 ring-offset-4 ring-offset-transparent bg-white/10">
                 <img 
                   src={profilePicture} 
                   alt="Dilmi Senevirathna" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="absolute left-0 right-0 bottom-0 translate-y-1/2 mx-7 grid grid-cols-3 bg-card border border-border shadow-xl rounded-md overflow-hidden">
-                {proofPoints.map((item) => (
-                  <div key={item.label} className="px-3 py-4 text-center border-r border-border last:border-r-0">
-                    <p className="text-xl md:text-2xl font-extrabold text-primary">{item.value}</p>
-                    <p className="text-[10px] uppercase text-muted-foreground mt-1">{item.label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="absolute right-6 top-6 inline-flex items-center gap-2 bg-background/90 border border-border px-3 py-2 rounded-md text-xs font-medium shadow-lg backdrop-blur">
-                <CheckCircle2 className="h-4 w-4 text-primary" /> QA focused
-              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-28 h-28 bg-accent/40 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-36 h-36 bg-primary/40 rounded-full blur-2xl"></div>
+              <div className="absolute top-1/2 -right-3 w-6 h-6 bg-white/30 rounded-full blur-sm"></div>
+              <div className="absolute top-1/4 -left-2 w-4 h-4 bg-white/20 rounded-full blur-sm"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <button
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 hidden md:flex items-center gap-2 text-xs uppercase text-muted-foreground hover:text-primary transition-colors"
-        onClick={() => document.querySelector("#professional-projects")?.scrollIntoView({ behavior: "smooth" })}
-      >
-        View QA evidence <ArrowDownRight className="h-4 w-4" />
-      </button>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-2 bg-white/50 rounded-full"></div>
+        </div>
+      </div>
     </section>
   );
 };
