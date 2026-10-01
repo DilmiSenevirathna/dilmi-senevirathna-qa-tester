@@ -1,7 +1,8 @@
 import { FileText } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import esupportServiceLetter from "@/assets/certificates/esupport-service-letter.png";
-import commercializerServiceLetter from "@/assets/certificates/commercializer-service-letter.png";
+import commercializerLetterAsset from "@/assets/certificates/commercializer-service-letter-v2.png.asset.json";
+const commercializerServiceLetter = commercializerLetterAsset.url;
 
 export const Certifications = () => {
   const documents = [
