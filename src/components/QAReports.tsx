@@ -1,4 +1,4 @@
-import { ExternalLink, Award } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import pwPdf from "@/assets/reports/QA_Test_Report_Playwright_E2E_DilmiSenevirathna.pdf.asset.json";
@@ -11,6 +11,13 @@ import bsPdf from "@/assets/reports/QA_Test_Report_BrowserStack_CrossBrowser_Dil
 import bsThumb from "@/assets/reports/QA_Test_Report_BrowserStack_CrossBrowser_DilmiSenevirathna-thumb.jpg.asset.json";
 import apiPdf from "@/assets/reports/QA_Test_Report_ShowOff_API_Testing_DilmiSenevirathna.pdf.asset.json";
 import apiThumb from "@/assets/reports/QA_Test_Report_ShowOff_API_Testing_DilmiSenevirathna-thumb.jpg.asset.json";
+import alisonPdf from "@/assets/certificates/alison-qa.pdf.asset.json";
+import alisonThumb from "@/assets/certificates/alison-qa-thumb.jpg.asset.json";
+import c1 from "@/assets/certificates/cert-API_1.png.asset.json";
+import c2 from "@/assets/certificates/cert-API_2.png.asset.json";
+import c3 from "@/assets/certificates/cert-API_3.png.asset.json";
+import c4 from "@/assets/certificates/cert-API_4.png.asset.json";
+import c5 from "@/assets/certificates/cert-API_5.jpg.asset.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const QAReports = () => {
@@ -23,41 +30,12 @@ export const QAReports = () => {
   ];
 
   const certifications = [
-    {
-      title: "Cost of Software Quality",
-      date: "February 2024",
-      url: "https://drive.google.com/file/d/1U2e58T7ftRppektEqXWGoglfTYcX42TF/view?usp=sharing",
-    },
-    {
-      title: "Foundation of Successful Automation",
-      date: "February 2024",
-      url: "https://drive.google.com/file/d/1sT6MziIed9BOd8noZjXYcWtLX5Oebyva/view?usp=drive_link",
-    },
-    {
-      title: "Quality Assurance Techniques and Methodologies",
-      date: "March 2024",
-      url: "https://drive.google.com/file/d/1PZL21BNbwgvXv4c8fH0CLqsDrl6BB6yF/view?usp=drive_link",
-    },
-    {
-      title: "API Test Automation with Postman",
-      date: "March 2024",
-      url: "https://drive.google.com/file/d/1GB0VlYlKxwMhawa7nO9gJW4rj2V8JCyt/view?usp=drive_link",
-    },
-    {
-      title: "Continuous Testing",
-      date: "March 2024",
-      url: "https://drive.google.com/file/d/1DQEADRzn0jwHyMb4fj1rB34gfXvaHarN/view?usp=drive_link",
-    },
-    {
-      title: "Web Element Locator Strategies",
-      date: "April 2024",
-      url: "https://drive.google.com/file/d/19afDi6S2fz9Ap6jayPIEI161zcIUEYnp/view?usp=drive_link",
-    },
-    {
-      title: "Codeless Test Automation with Selenium IDE",
-      date: "April 2024",
-      url: "https://drive.google.com/file/d/1SP_2bj1oMv2kpwrRVRHhrE0UstGKHgv-/view?usp=drive_link",
-    },
+    { title: "Quality Assurance (QA) - Techniques and Methodologies", issuer: "Alison", date: "8 October 2024", url: alisonPdf.url, thumb: alisonThumb.url },
+    { title: "API Test Automation with Postman", issuer: "Test Automation University", date: "5 April 2024", url: c1.url, thumb: c1.url },
+    { title: "The Whole Team Approach to Continuous Testing", issuer: "Test Automation University", date: "6 April 2024", url: c2.url, thumb: c2.url },
+    { title: "Web Element Locator Strategies", issuer: "Test Automation University", date: "6 April 2024", url: c3.url, thumb: c3.url },
+    { title: "Codeless Test Automation with Selenium IDE", issuer: "Test Automation University", date: "5 April 2024", url: c4.url, thumb: c4.url },
+    { title: "Cost of Software Quality", issuer: "EdApp by SafetyCulture", date: "3 March 2024", url: c5.url, thumb: c5.url },
   ];
 
   return (
@@ -115,19 +93,20 @@ export const QAReports = () => {
               {certifications.map((cert, index) => (
                 <Card
                   key={index}
-                  className="p-6 border-2 hover:shadow-xl transition-all hover:-translate-y-2 group"
+                  className="p-6 overflow-hidden border-2 hover:shadow-xl transition-all hover:-translate-y-2 group"
                 >
-                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-4 group-hover:animate-pulse-glow">
-                    <Award className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                  <a href={cert.url} target="_blank" rel="noopener noreferrer" className="block aspect-[4/3] -mx-6 -mt-6 mb-4 overflow-hidden bg-muted border-b border-border">
+                    <img src={cert.thumb} alt={`${cert.title} certificate`} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                  </a>
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">
                     {cert.title}
                   </h3>
+                  <p className="text-sm text-primary font-medium mb-1">{cert.issuer}</p>
                   <p className="text-sm text-muted-foreground mb-4">{cert.date}</p>
                   <Button size="sm" className="gap-2 w-full" asChild>
                     <a href={cert.url} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4" />
-                      View Certificate
+                      Preview Certificate
                     </a>
                   </Button>
                 </Card>
