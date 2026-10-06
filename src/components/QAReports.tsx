@@ -1,52 +1,25 @@
 import { FileCheck, Github, ExternalLink, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import pwPdf from "@/assets/reports/QA_Test_Report_Playwright_E2E_DilmiSenevirathna.pdf.asset.json";
+import pwThumb from "@/assets/reports/QA_Test_Report_Playwright_E2E_DilmiSenevirathna-thumb.jpg.asset.json";
+import cyPdf from "@/assets/reports/QA_Test_Report_Cypress_E2E_DilmiSenevirathna.pdf.asset.json";
+import cyThumb from "@/assets/reports/QA_Test_Report_Cypress_E2E_DilmiSenevirathna-thumb.jpg.asset.json";
+import selPdf from "@/assets/reports/QA_Test_Report_Selenium_Regression_DilmiSenevirathna.pdf.asset.json";
+import selThumb from "@/assets/reports/QA_Test_Report_Selenium_Regression_DilmiSenevirathna-thumb.jpg.asset.json";
+import bsPdf from "@/assets/reports/QA_Test_Report_BrowserStack_CrossBrowser_DilmiSenevirathna.pdf.asset.json";
+import bsThumb from "@/assets/reports/QA_Test_Report_BrowserStack_CrossBrowser_DilmiSenevirathna-thumb.jpg.asset.json";
+import apiPdf from "@/assets/reports/QA_Test_Report_ShowOff_API_Testing_DilmiSenevirathna.pdf.asset.json";
+import apiThumb from "@/assets/reports/QA_Test_Report_ShowOff_API_Testing_DilmiSenevirathna-thumb.jpg.asset.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const QAReports = () => {
   const testReports = [
-    {
-      title: "Manual Testing – LankaJobs.lk",
-      description: "Manual testing report for LankaJobs job portal validating core user journeys like registration and CV upload.",
-      reportUrl: "https://github.com/DilSenevirathna/QA-testing-samples",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
-    {
-      title: "Selenium Testing – PickMe.lk",
-      description: "Automated Selenium test for login, booking, and payment functionalities on PickMe ride sharing platform.",
-      reportUrl: "https://github.com/DilSenevirathna/QA-testing-samples",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
-    {
-      title: "Manual Testing – Takas.lk",
-      description: "Test report covering checkout and cart behavior on Takas.lk shopping platform.",
-      reportUrl: "https://github.com/DilSenevirathna/QA-testing-samples",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
-    {
-      title: "Selenium Testing – MyDeal.lk",
-      description: "Automated UI verification for deals, countdowns, and filters on MyDeal.lk platform.",
-      reportUrl: "https://github.com/DilSenevirathna/QA-testing-samples",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
-    {
-      title: "Hybrid Testing – Kapruka.com",
-      description: "Combination of manual and Selenium testing on gift ordering and delivery modules.",
-      reportUrl: "https://github.com/DilSenevirathna/QA-testing-samples",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
-    {
-      title: "Learnmate QA Test Report",
-      description: "Detailed quality assurance testing documentation including test cases, results, and automation scripts.",
-      reportUrl: "https://drive.google.com/file/d/1ba11nbUt2g39Y8L07CngGnT9NKc304pX/view?usp=sharing",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
-    {
-      title: "Test Automation – Library Management System",
-      description: "Comprehensive test automation documentation for LMS with manual and Selenium testing.",
-      reportUrl: "https://drive.google.com/file/d/1JcMnGuUIzz-gPlRH4rsASdQzEtVqge0O/view?usp=drive_link",
-      github: "https://github.com/DilSenevirathna/QA-testing-samples",
-    },
+    { title: "Playwright E2E – SauceDemo Web App", description: "End-to-end test summary report built with the Playwright automation framework.", pdf: pwPdf.url, thumb: pwThumb.url },
+    { title: "Cypress E2E – SauceDemo Web App", description: "End-to-end test summary report built with the Cypress automation framework.", pdf: cyPdf.url, thumb: cyThumb.url },
+    { title: "Selenium Regression – SauceDemo Web App", description: "Functional regression test report using a Selenium WebDriver automation suite.", pdf: selPdf.url, thumb: selThumb.url },
+    { title: "BrowserStack Cross-Browser – SauceDemo Web App", description: "Cross-browser and cross-device compatibility report using BrowserStack Automate & Live.", pdf: bsPdf.url, thumb: bsThumb.url },
+    { title: "API Testing – ShowOff API", description: "RESTful API test summary report using a Postman / Newman automation suite.", pdf: apiPdf.url, thumb: apiThumb.url },
   ];
 
   const certifications = [
@@ -114,30 +87,23 @@ export const QAReports = () => {
               {testReports.map((report, index) => (
                 <Card
                   key={index}
-                  className="p-6 border-2 hover:shadow-xl transition-all hover:-translate-y-2 group"
+                  className="p-6 overflow-hidden border-2 hover:shadow-xl transition-all hover:-translate-y-2 group"
                 >
-                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-4 group-hover:animate-pulse-glow">
-                    <FileCheck className="h-6 w-6 text-white" />
-                  </div>
+                  <a href={report.pdf} target="_blank" rel="noopener noreferrer" className="block aspect-[3/4] -mx-6 -mt-6 mb-4 overflow-hidden bg-muted border-b border-border">
+                    <img src={report.thumb} alt={`${report.title} cover`} loading="lazy" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                  </a>
                   <h3 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors">
                     {report.title}
                   </h3>
                   <p className="text-muted-foreground mb-4 text-sm line-clamp-3">
                     {report.description}
                   </p>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="gap-2 flex-1" asChild>
-                      <a href={report.reportUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                        View
-                      </a>
-                    </Button>
-                    <Button size="sm" variant="outline" className="gap-2" asChild>
-                      <a href={report.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </div>
+                  <Button size="sm" variant="outline" className="gap-2 w-full" asChild>
+                    <a href={report.pdf} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" />
+                      Preview Report
+                    </a>
+                  </Button>
                 </Card>
               ))}
             </div>
