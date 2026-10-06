@@ -1,4 +1,4 @@
-import { FileCheck, Github, ExternalLink, Award } from "lucide-react";
+import { ExternalLink, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import pwPdf from "@/assets/reports/QA_Test_Report_Playwright_E2E_DilmiSenevirathna.pdf.asset.json";
