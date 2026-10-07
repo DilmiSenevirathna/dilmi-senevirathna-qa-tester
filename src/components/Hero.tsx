@@ -1,7 +1,7 @@
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePicture from "@/assets/profile-picture.png";
-import resumeAsset from "@/assets/Dilmi_Senevirathna_Resume.pdf.asset.json";
+import resumeAsset from "@/assets/Dilmi_Senevirathna_Resume_v6.pdf.asset.json";
 
 export const Hero = () => {
   return (
