@@ -71,7 +71,7 @@ export const About = () => {
                     "Accessibility (WCAG)",
                     "Cross-Browser Testing",
                     "Mobile Testing",
-                    "API Testing (Postman)",
+                    "API Testing (Postman, Bruno, Insomnia)",
                     "SQL & DB Validation",
                     "Agile / Scrum",
                     "Jira & TestRail",
@@ -109,6 +109,7 @@ export const About = () => {
                     "BDD (Cucumber)",
                     "Performance (JMeter / k6)",
                     "AI-Assisted Testing",
+                    "AI Tools (Claude, Copilot, ChatGPT, Gemini, Grok)",
                     "TypeScript / Python",
                   ].map((skill) => (
                     <Badge
