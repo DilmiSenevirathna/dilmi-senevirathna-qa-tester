@@ -8,11 +8,26 @@ export const Skills = () => {
     { name: "Cypress", icon: "cypressio", color: "#69D3A7" },
     { name: "Appium", icon: "android", color: "#662D91" },
     { name: "pytest", icon: "pytest", color: "#0A9EDC" },
-    { name: "JMeter", icon: "apachejmeter", color: "#D22128" },
+    { name: "JMeter", si: "apachejmeter", color: "D22128" },
+    { name: "k6", si: "k6", color: "F46800" },
     { name: "Jira", icon: "jira", color: "#0052CC" },
     { name: "Postman", icon: "postman", color: "#FF6C37" },
+    { name: "Bruno", si: "bruno", color: "E2703A" },
+    { name: "Insomnia", si: "insomnia", color: "6C47FF" },
+    { name: "OWASP ZAP", si: "zap", color: "29ABE2" },
     { name: "Mabl", icon: "mabl", color: "#4A154B", customLogo: true },
     { name: "BrowserStack", icon: "browserstack", color: "#F5B914" },
+  ];
+
+  const aiTools = [
+    { name: "GitHub Copilot", si: "githubcopilot", color: "9DB4FF" },
+    { name: "Claude", si: "claude", color: "D97757" },
+    { name: "Gemini", si: "googlegemini", color: "5B8DEF" },
+    { name: "Grok", initials: "G", color: "#E5E7EB" },
+    { name: "Replit", si: "replit", color: "F26207" },
+    { name: "V0", si: "v0", color: "E5E7EB" },
+    { name: "Cursor", si: "cursor", color: "A5B4FC" },
+    { name: "Perplexity", si: "perplexity", color: "20B8CD" },
   ];
 
   const developmentSkills = [
@@ -32,6 +47,47 @@ export const Skills = () => {
     { name: "Android Studio", icon: "androidstudio", color: "#3DDC84" },
     { name: "Figma", icon: "figma", color: "#F24E1E" },
   ];
+
+  const renderIcon = (skill: (typeof qaSkills)[number]) => {
+    if (skill.customLogo) {
+      return <img src={mablLogo} alt={skill.name} className="w-10 h-10 object-contain" />;
+    }
+    if (skill.si) {
+      return (
+        <img
+          src={`https://cdn.simpleicons.org/${skill.si}/${skill.color}`}
+          alt={skill.name}
+          className="w-10 h-10 object-contain"
+        />
+      );
+    }
+    return (
+      <i
+        className={`devicon-${skill.icon}-plain colored`}
+        style={{ color: skill.color }}
+      ></i>
+    );
+  };
+
+  const renderAiIcon = (tool: (typeof aiTools)[number]) => {
+    if (tool.si) {
+      return (
+        <img
+          src={`https://cdn.simpleicons.org/${tool.si}/${tool.color}`}
+          alt={tool.name}
+          className="w-10 h-10 object-contain"
+        />
+      );
+    }
+    return (
+      <span
+        className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border font-bold text-lg"
+        style={{ color: tool.color }}
+      >
+        {tool.initials}
+      </span>
+    );
+  };
 
   return (
     <section id="skills" className="py-24 bg-muted/30">
@@ -62,16 +118,32 @@ export const Skills = () => {
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <div className="text-4xl group-hover:scale-110 transition-transform">
-                    {skill.customLogo ? (
-                      <img src={mablLogo} alt={skill.name} className="w-10 h-10 object-contain" />
-                    ) : (
-                      <i
-                        className={`devicon-${skill.icon}-plain colored`}
-                        style={{ color: skill.color }}
-                      ></i>
-                    )}
+                    {renderIcon(skill)}
                   </div>
                   <span className="font-medium text-sm text-center">{skill.name}</span>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* AI Tools - Modern QA Workflows */}
+          <div className="space-y-6">
+            <div className="text-center">
+              <div className="inline-block px-6 py-2 bg-primary/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-4 text-primary border border-primary/20">
+                🤖 AI Tools
+              </div>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {aiTools.map((tool, index) => (
+                <Card
+                  key={index}
+                  className="p-6 flex flex-col items-center justify-center gap-3 hover:shadow-lg transition-all hover:-translate-y-2 border-2 group cursor-pointer"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="text-4xl group-hover:scale-110 transition-transform">
+                    {renderAiIcon(tool)}
+                  </div>
+                  <span className="font-medium text-sm text-center">{tool.name}</span>
                 </Card>
               ))}
             </div>
