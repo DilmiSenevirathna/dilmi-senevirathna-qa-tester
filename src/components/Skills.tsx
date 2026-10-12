@@ -8,7 +8,7 @@ export const Skills = () => {
     { name: "Cypress", icon: "cypressio", color: "#69D3A7" },
     { name: "Appium", icon: "android", color: "#662D91" },
     { name: "pytest", icon: "pytest", color: "#0A9EDC" },
-    { name: "JMeter", icon: "apachejmeter", color: "#D22128" },
+    { name: "JMeter", si: "apachejmeter", color: "D22128" },
     { name: "k6", si: "k6", color: "F46800" },
     { name: "Jira", icon: "jira", color: "#0052CC" },
     { name: "Postman", icon: "postman", color: "#FF6C37" },
