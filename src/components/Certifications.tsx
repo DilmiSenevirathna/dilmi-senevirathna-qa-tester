@@ -1,6 +1,6 @@
 import { FileText } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import esupportServiceLetter from "@/assets/certificates/esupport-service-letter.png";
+import esupportServiceLetterAsset from "@/assets/certificates/esupport-service-letter-v2.png.asset.json";
 import commercializerLetterAsset from "@/assets/certificates/commercializer-service-letter-v2.png.asset.json";
 import psbDiplomaAsset from "@/assets/certificates/psb-cyber-security-diploma.png.asset.json";
 const commercializerServiceLetter = commercializerLetterAsset.url;
@@ -15,11 +15,11 @@ export const Certifications = () => {
       image: commercializerServiceLetter,
     },
     {
-      title: "Internship Service Letter",
+      title: "Service Letter",
       organization: "eSupport Technologies (Pvt) Ltd",
-      date: "March 2024 - March 2025",
-      description: "Successfully completed one year internship as Intern Software Engineer in the Development Department.",
-      image: esupportServiceLetter,
+      date: "October 2023 - March 2025",
+      description: "Intern Software Engineer in the Software Development Department, then permanent Associate QA Engineer completing one year of service.",
+      image: esupportServiceLetterAsset.url,
     },
     {
       title: "Diploma in Cyber Security and Ethical Hacking",
