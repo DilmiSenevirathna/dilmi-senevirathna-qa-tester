@@ -1,7 +1,7 @@
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePicture from "@/assets/profile-picture.png";
-import resumeAsset from "@/assets/Dilmi_Senevirathna_Resume_v6.pdf.asset.json";
+import resumeAsset from "@/assets/Dilmi_Senevirathna_Resume_v7.pdf.asset.json";
 
 export const Hero = () => {
   return (
@@ -31,7 +31,7 @@ export const Hero = () => {
             </p>
             
             <p className="text-lg text-muted-foreground max-w-xl">
-              Quality Assurance Engineer with over 2 years of experience specializing in test automation, performance testing, and software quality validation. Skilled in Playwright, Selenium, JMeter, and modern testing methodologies.
+              Quality Assurance Engineer with over 3 years of experience specializing in test automation, performance testing, and software quality validation. Skilled in Playwright, Selenium, JMeter, and modern testing methodologies.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
